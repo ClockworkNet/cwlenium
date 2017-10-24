@@ -1,0 +1,9 @@
+source 'http://rubygems.org'
+
+gem 'bundler'
+gem 'cucumber', "~>3.0"
+gem 'rake'
+gem 'selenium-webdriver'
+gem 'watir', '~> 6'
+gem 'rspec-expectations'
+gem 'pry'

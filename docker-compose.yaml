@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+  tester:
+    image: ruby:2.3
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./tests:/tests
+      - bundle:/usr/local/bundle
+    working_dir: /tests
+    expose:
+      - "4444"
+      - "4445"
+    command: >
+      bash -c "bundle install --jobs 4; cucumber"
+
+  zalenium:
+    image: dosel/zalenium:3
+    privileged: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/videos:/home/seluser/videos
+    ports:
+      - 4444:4444
+    expose:
+      - "4444"
+      - "4445"
+    command: start --sendAnonymousUsageInfo false
+
+volumes:
+  bundle:
