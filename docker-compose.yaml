@@ -29,5 +29,13 @@ services:
       - "4445"
     command: start --sendAnonymousUsageInfo false
 
+  backstopjs:
+    image: backstopjs/backstopjs
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./backstop:/src
+    
+
 volumes:
   bundle:
