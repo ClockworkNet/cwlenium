@@ -32,6 +32,7 @@ services:
   backstopjs:
     image: backstopjs/backstopjs
     stdin_open: true
+    shm_size: 1g
     tty: true
     volumes:
       - ./backstop:/src

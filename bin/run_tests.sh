@@ -17,3 +17,9 @@ docker-compose run tester
 
 echo "Stopping Zalenium Grid"
 ${DIR}/stop_zalenium.sh
+
+echo "Generating visual regression reference files"
+${DIR}/generate_backstop_references.sh
+
+echo "Executing visual regression tests"
+${DIR}/run_backstop_tests.sh

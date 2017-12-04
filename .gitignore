@@ -1,1 +1,9 @@
 **/Gemfile.lock
+
+# BackstopJS generated files #
+##############################
+/backstop/backstop_data/bitmaps_reference
+/backstop/backstop_data/bitmaps_test
+/backstop/backstop_data/html_report
+
+.idea/
